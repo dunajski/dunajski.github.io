@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>mdnj</title>
-    <link>https://dunajski.github.io/pl/</link>
-    <description>Recent content on mdnj</description>
-    <generator>Hugo</generator>
-    <language>pl</language>
-    <lastBuildDate></lastBuildDate>
-    <atom:link href="https://dunajski.github.io/pl/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>mdnj</title><link>https://dunajski.github.io/pl/</link><description>Recent content on mdnj</description><generator>Hugo -- 0.146.7</generator><language>pl</language><lastBuildDate/><atom:link href="https://dunajski.github.io/pl/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
