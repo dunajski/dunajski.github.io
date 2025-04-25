@@ -1,0 +1,25 @@
+baseURL = 'https://dunajski.github.io/'
+title = 'mdnj'
+theme = 'PaperMod'
+languageCode = 'pl'
+defaultContentLanguage = 'pl'
+defaultContentLanguageInSubdir = true
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 10
+
+[languages]
+  [languages.pl]
+    languageName = "Polski"
+    weight = 1
+    contentDir = "content/pl"
+    params.author = "Michał Dunajski"
+    params.description = "Osobisty notatnik, projekty i przemyślenia"
+    params.defaultTheme = "auto"
+
+    [[languages.pl.menu.main]]
+      identifier = "about"
+      name = "O mnie"
+      url = "/about/"
+      weight = 1
