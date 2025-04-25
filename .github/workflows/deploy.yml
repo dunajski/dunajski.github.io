@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -22,7 +24,7 @@ jobs:
           hugo-version: 'latest'
 
       - name: Build site
-        run: hugo
+        run: hugo --minify
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
