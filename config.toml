@@ -4,10 +4,8 @@ theme = 'PaperMod'
 languageCode = 'pl'
 defaultContentLanguage = 'pl'
 defaultContentLanguageInSubdir = true
-enableRobotsTXT = true
 
-[pagination]
-  pagerSize = 10
+enableRobotsTXT = true
 
 [languages]
   [languages.pl]
@@ -15,11 +13,35 @@ enableRobotsTXT = true
     weight = 1
     contentDir = "content/pl"
     params.author = "Michał Dunajski"
-    params.description = "Osobisty notatnik, projekty i przemyślenia"
-    params.defaultTheme = "auto"
+    params.description = "Osobisty notatnik i blog"
 
     [[languages.pl.menu.main]]
       identifier = "about"
       name = "O mnie"
       url = "/about/"
       weight = 1
+
+    [[languages.pl.menu.main]]
+      identifier = "posts"
+      name = "Blog"
+      url = "/posts/"
+      weight = 2
+
+  [languages.en]
+    languageName = "English"
+    weight = 2
+    contentDir = "content/en"
+    params.author = "Michał Dunajski"
+    params.description = "Personal notebook and blog"
+
+    [[languages.en.menu.main]]
+      identifier = "about"
+      name = "About"
+      url = "/about/"
+      weight = 1
+
+    [[languages.en.menu.main]]
+      identifier = "posts"
+      name = "Blog"
+      url = "/posts/"
+      weight = 2
