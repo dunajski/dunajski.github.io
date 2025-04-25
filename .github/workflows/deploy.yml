@@ -1,4 +1,4 @@
-name: Build and Deploy Hugo site to GitHub Pages
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
@@ -6,49 +6,28 @@ on:
       - master
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  contents: write
 
 jobs:
   build:
-    runs-on: ubuntu-22.04  # ZMIANA: zamiast ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Download upload-artifact  # ZMIANA: dodany krok na obejście błędu
-        uses: actions/upload-artifact@v3
-
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          submodules: recursive  # pobiera motywy
+          submodules: recursive  # pobiera motyw PaperMod
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'  # możesz zmienić np. na '0.124.1' jeśli chcesz konkretną wersję
+          hugo-version: 'latest'
 
       - name: Build site
-        run: hugo --minify  # budowanie i minifikacja strony
+        run: hugo --minify
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2  # poprawna akcja do Pages
-        with:
-          path: ./public  # katalog z wynikami budowy Hugo
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-22.04  # ZMIANA: zamiast ubuntu-latest
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
